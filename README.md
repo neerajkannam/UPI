@@ -1,97 +1,162 @@
-# 🔐 UPI Fraud Detection System
+🛡️ UPI Fraud Detection Using Machine Learning
+📌 Project Overview
 
-## 📌 Project Overview
+With the rapid adoption of UPI and digital payment systems, detecting fraudulent transactions has become increasingly important. This project demonstrates an end-to-end machine learning pipeline to identify fraudulent UPI transactions using transaction, device, and time-based features.
 
-This project implements an **end-to-end UPI Fraud Detection System** using supervised machine learning to identify fraudulent transactions. It addresses real-world challenges such as **class imbalance**, **threshold optimization**, and **deployment-ready inference**.
+The solution focuses on building a reliable and interpretable fraud detection model, with Logistic Regression finalized as the production model, and provides a deployable Streamlit-based web application.
 
-The solution includes data generation, preprocessing, model training, evaluation, threshold tuning, and deployment through an interactive **Streamlit web application**.
+🎯 Key Highlights
 
----
+End-to-end ML pipeline from data generation to deployment
 
-## 🚀 Features
+Synthetic UPI transaction dataset with realistic fraud patterns
 
-* Synthetic UPI transaction data generation
-* Feature engineering from timestamps
-* Class imbalance handling
-* Multiple ML models comparison
-* Hyperparameter & threshold tuning
-* Confusion matrix–based evaluation
-* Interactive Streamlit UI with fraud alerts
-* Production-ready model artifact (`.pkl`)
+Comprehensive EDA and correlation analysis
 
----
+Multiple models evaluated, Logistic Regression finalized
 
-## 🧠 Models Used
+Streamlit web application for real-time fraud prediction
 
-* Logistic Regression
-* Decision Tree
-* Random Forest
-* K-Nearest Neighbors
-* Balanced Random Forest
-* **EasyEnsembleClassifier (Final Model)**
+📂 Dataset Description
 
----
+The dataset is synthetically generated to simulate real UPI transactions.
 
-## 📊 Evaluation Metrics
+Features:
 
-* Precision
-* Recall
-* F1-score
-* Confusion Matrix
+transaction_id
 
-(Accuracy was not prioritized due to class imbalance.)
+timestamp
 
----
+user_id
 
-## 🏆 Final Model
+receiver_id
 
-* **Model:** EasyEnsembleClassifier
-* **Threshold:** 0.46
-* Optimized for **fraud recall and F1-score**
+amount
 
----
+transaction_type
 
-## 🖥️ Deployment
+location
 
-* Built using **Streamlit**
-* Two-page interactive UI (Input → Result)
-* Color-coded fraud/non-fraud screens
-* Real-time prediction with risk visualization
+device_type
 
-Run the app:
+is_rooted_device
 
-```bash
-python3 -m streamlit run app.py
-```
+network_type
 
----
+time_of_day
 
-## 📁 Project Structure
+is_fraud (target variable)
 
-```
-├── app.py
-├── easyensemble_fraud_model.pkl
-├── upi_fraud_data.csv
-├── UPI_Fraud_Detection.ipynb
-├── README.md
-```
+🔧 Project Workflow
 
----
+Data Generation
 
-## 🛠️ Technologies Used
+Python-based synthetic data generation
 
-* Python
-* Pandas, NumPy
-* Scikit-learn
-* Imbalanced-learn
-* Streamlit
+Rule-based and random fraud injection
 
+Data Preprocessing
 
----
+Timestamp conversion to datetime
 
-## 🔮 Future Improvements
+Handling categorical and numerical features
 
-* Real UPI transaction data
-* SHAP-based explainability
-* Cost-sensitive learning
-* Cloud deployment (AWS/GCP)
+No missing values detected
+
+Feature Engineering
+
+Time-based feature extraction (day, month, time of day)
+
+Exploratory Data Analysis (EDA)
+
+Fraud distribution analysis
+
+Transaction and device pattern analysis
+
+Correlation Analysis
+
+Identified weak linear correlations
+
+Justified use of machine learning models
+
+Encoding & Scaling
+
+Label Encoding for categorical variables
+
+Standard Scaling for numerical features
+
+Model Development
+
+Logistic Regression (final model)
+
+Decision Tree
+
+Random Forest
+
+K-Nearest Neighbors
+
+Model Evaluation
+
+Accuracy, Precision, Recall, F1-score
+
+Confusion Matrix analysis
+
+Deployment
+
+Model saved as .pkl with preprocessing artifacts
+
+Streamlit web application for predictions
+
+✅ Final Model Selection
+
+Logistic Regression was finalized due to:
+
+Stable and consistent performance
+
+Interpretability
+
+Suitability for imbalanced datasets using class weights
+
+Ease of deployment
+
+🚀 Streamlit Application
+
+The Streamlit app allows users to:
+
+Enter transaction details
+
+Get fraud probability
+
+View fraud / non-fraud result with visual indicators
+
+⚠️ Limitations
+
+Dataset is synthetic
+
+Limited behavioral and historical features
+
+No real-time data integration
+
+🔮 Future Enhancements
+
+Hyperparameter and threshold tuning
+
+Advanced ensemble models
+
+Real-time data integration
+
+Model explainability (SHAP, feature importance)
+
+🧑‍💻 Technologies Used
+
+Python
+
+Pandas, NumPy
+
+Scikit-learn
+
+Streamlit
+
+📌 Conclusion
+
+This project demonstrates how machine learning can be effectively applied to detect fraudulent UPI transactions. By focusing on a clean pipeline and interpretable models, it provides a strong foundation for real-world fraud detection systems.
